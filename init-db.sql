@@ -1,0 +1,4 @@
+CREATE DATABASE auth_db;
+CREATE DATABASE user_db;
+CREATE DATABASE server_db;
+CREATE DATABASE message_db;
