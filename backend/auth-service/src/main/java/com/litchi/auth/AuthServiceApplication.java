@@ -1,4 +1,4 @@
-package com.discord.auth;
+package com.litchi.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
