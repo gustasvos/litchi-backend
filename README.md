@@ -37,7 +37,6 @@ Chat em tempo real com servidores e canais de texto, inspirado no Discord.
 - Docker e Docker Compose
 - Java 21
 - Node 22
-- Spring CLI (para criar novos servicos)
 
 ## Configuracao
 
@@ -89,7 +88,7 @@ O frontend fica disponivel em `http://localhost` e o gateway em `http://localhos
 ## Estrutura
 
 ```
-discord-clone/
+litchi/
 ├── docker-compose.yml
 ├── nginx.conf
 ├── .env
