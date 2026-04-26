@@ -1,6 +1,4 @@
-# Litchi Web Chat
-
-Chat em tempo real com servidores e canais de texto, inspirado no Discord.
+# Litchi - Backend
 
 ## Stack
 
