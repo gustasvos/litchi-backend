@@ -4,11 +4,6 @@ Chat em tempo real com servidores e canais de texto, inspirado no Discord.
 
 ## Stack
 
-**Frontend**
-- React + Vite
-- Tailwind CSS + DaisyUI
-- STOMP.js (WebSocket)
-
 **Backend**
 - Spring Boot 4 (Java 21)
 - Spring Cloud Gateway
@@ -36,7 +31,6 @@ Chat em tempo real com servidores e canais de texto, inspirado no Discord.
 
 - Docker e Docker Compose
 - Java 21
-- Node 22
 
 ## Configuracao
 
@@ -49,9 +43,9 @@ cp .env.example .env
 Variaveis necessarias no `.env`:
 
 ```
-POSTGRES_USER=discord
-POSTGRES_PASSWORD=
-JWT_SECRET=
+POSTGRES_USER=userexample
+POSTGRES_PASSWORD=passwordexample
+JWT_SECRET=hashexample
 ```
 
 ## Rodando localmente
@@ -59,7 +53,7 @@ JWT_SECRET=
 Subir apenas a infraestrutura (recomendado durante o desenvolvimento):
 
 ```bash
-docker compose up postgres redis rabbitmq
+docker compose -f docker-compose.infra.yml up
 ```
 
 Rodar um servico Spring individualmente:
@@ -69,49 +63,37 @@ cd backend/auth-service
 ./mvnw spring-boot:run
 ```
 
-Rodar o frontend:
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
 ## Subindo tudo junto
 
 ```bash
 docker compose up --build
 ```
 
-O frontend fica disponivel em `http://localhost` e o gateway em `http://localhost:8080`.
+O gateway fica disponível em `http://localhost:8080`.
 
 ## Estrutura
 
 ```
-litchi/
+litchi-backend/
 ├── docker-compose.yml
-├── nginx.conf
+├── docker-compose.infra.yml
 ├── .env
-├── .env.example
-├── frontend/
-│   ├── Dockerfile
-│   └── src/
-└── backend/
-    ├── api-gateway/
-    ├── auth-service/
-    ├── user-service/
-    ├── server-service/
-    ├── message-service/
-    └── ws-service/
+├── init-db.sql
+├── nginx.conf
+├── api-gateway/
+├── auth-service/
+├── user-service/
+├── server-service/
+├── message-service/
+└── ws-service/
 ```
 
 ## Status do projeto - EM ANDAMENTO
 
 - [x] Infraestrutura Docker
 - [x] auth-service
-- [ ] api-gateway
+- [x] api-gateway
 - [ ] user-service
 - [ ] server-service
 - [ ] message-service
 - [ ] ws-service
-- [ ] Frontend
