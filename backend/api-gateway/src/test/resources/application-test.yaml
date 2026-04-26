@@ -1,0 +1,15 @@
+jwt:
+  secret: dGVzdHNlY3JldGtleWZvcmRldmVsb3BtZW50b25seXRlc3Q=
+
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: auth-service
+              uri: http://localhost:8081
+              predicates:
+                - Path=/api/auth/**
+              filters:
+                - StripPrefix=1
